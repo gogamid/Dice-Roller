@@ -3,6 +3,7 @@ package com.example.diceroller
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
+import android.widget.ImageView
 import android.widget.TextView
 
 class MainActivity : AppCompatActivity() {
@@ -17,9 +18,11 @@ class MainActivity : AppCompatActivity() {
 
   private fun rollDice() {
     val dice = Dice(6)
-    val resultTextView1: TextView = findViewById(R.id.dice1_text)
-    resultTextView1.text = dice.roll().toString()
-    val resultTextView2: TextView = findViewById(R.id.dice2_text)
-    resultTextView2.text = dice.roll().toString()
+    val roll1 = dice.roll()
+    val roll2 = dice.roll()
+    val dice1: ImageView = findViewById(R.id.dice1_image)
+    val dice2: ImageView = findViewById(R.id.dice2_image)
+    dice1.setImageResource(R.drawable.dice_1)
+    dice2.setImageResource(R.drawable.dice_1)
   }
 }
