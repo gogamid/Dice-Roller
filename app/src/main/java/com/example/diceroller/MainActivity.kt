@@ -13,9 +13,14 @@ class MainActivity : AppCompatActivity() {
 
     val button: Button = findViewById(R.id.roll_button)
     button.setOnClickListener {
-      val resultTextView: TextView = findViewById(R.id.textView)
-      resultTextView.text = "6"
+      rollDice()
     }
 
+  }
+
+  private fun rollDice() {
+    val dice = Dice(6)
+    val resultTextView: TextView = findViewById(R.id.textView)
+    resultTextView.text = dice.roll().toString()
   }
 }
